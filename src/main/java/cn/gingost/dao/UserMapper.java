@@ -2,6 +2,8 @@ package cn.gingost.dao;
 
 import cn.gingost.pojo.User;
 
+import java.util.List;
+
 public interface UserMapper {
     //用户登录
     User findOne(User user);
@@ -9,5 +11,7 @@ public interface UserMapper {
     void addOne(User user);
     //注册时的重名检测
     User checkReg(String username);
+
+    List<User> findall();
 }
 

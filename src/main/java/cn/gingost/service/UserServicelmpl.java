@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 
 import cn.gingost.dao.UserMapper;
 import cn.gingost.pojo.User;
+
+import java.util.List;
+
 /*
  * Service层，本例过于简单，其实可以不写
  * 直接在Controller层中自动注入UserMapper usermapper
@@ -32,6 +35,11 @@ public class UserServicelmpl implements UserService {
     public User checkReg(String username) {
         // TODO Auto-generated method stub
         return userMapper.checkReg(username);
+    }
+
+    @Override
+    public List<User> findall() {
+        return userMapper.findall();
     }
 
 }

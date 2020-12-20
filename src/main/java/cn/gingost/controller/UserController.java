@@ -3,10 +3,14 @@ package cn.gingost.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.gingost.pojo.User;
 import cn.gingost.service.UserService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -31,6 +35,12 @@ public class UserController {
             return "regok";
         }
         return "regno";
+    }
+
+    @RequestMapping("/chaxun")
+    public String query(ModelMap model){
+        model.put("userList",userService.findall());
+        return "chaxun";
     }
 }
 

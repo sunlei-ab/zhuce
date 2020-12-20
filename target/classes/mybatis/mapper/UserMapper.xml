@@ -14,4 +14,12 @@
     <select id="checkReg" resultType="cn.gingost.pojo.User">
 		select * from user where username=#{username}
 	</select>
+
+
+
+	<select id="findall" resultType="cn.gingost.pojo.User">
+		select * from user
+	</select>
+
+
 </mapper>
